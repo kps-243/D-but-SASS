@@ -1,0 +1,33 @@
+@mixin FlexMid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@function add($a, $b){
+    @return $a + $b;
+}
+
+body{
+    height: add(50px,500px);
+    @include FlexMid();
+    .boxP{
+        width: 300px;
+        height: 300px;
+        background-color: black;
+        @include FlexMid();
+        .boxE{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    }
+}
+.title{
+    font-size: 50px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+.title2{
+    @extend .title
+}
